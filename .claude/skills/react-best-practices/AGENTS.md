@@ -692,7 +692,7 @@ Reference: [https://nextjs.org/docs/app/guides/authentication](https://nextjs.or
 
 **Impact: LOW (reduces network payload by avoiding duplicate serialization)**
 
-RSC→client serialization deduplicates by object reference, not value. Same reference = serialized once; new reference = serialized again. Do transformations (`.toSorted()`, `.filter()`, `.map()`) in client, not server.
+RSC → client serialization deduplicates by object reference, not value. Same reference = serialized once; new reference = serialized again. Do transformations (`.toSorted()`, `.filter()`, `.map()`) in client, not server.
 
 **Incorrect: duplicates array**
 

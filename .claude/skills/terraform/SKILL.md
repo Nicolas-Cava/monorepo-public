@@ -336,7 +336,7 @@ checkov -d .
 - Open security groups to 0.0.0.0/0
 
 ✅ **Do:**
-- Use AWS Secrets Manager / Parameter Store
+- Use AWS Secrets Manager/Parameter Store
 - Create dedicated VPCs
 - Enable encryption at rest
 - Use least-privilege security groups

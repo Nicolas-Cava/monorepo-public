@@ -374,7 +374,7 @@ tofu plan -out=tfplan
 - OR Terratest
 
 **Phase 4:** CI/CD integration
-- Cloud Build / GitHub Actions
+- Cloud Build/GitHub Actions
 - Automated apply on main branch
 
 ### From Terratest → Native Tests (1.6+)

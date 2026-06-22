@@ -290,7 +290,7 @@ terraform plan -out=tfplan
 - OR Terratest
 
 **Phase 4:** CI/CD integration
-- GitHub Actions / GitLab CI
+- GitHub Actions/GitLab CI
 - Automated apply on main branch
 
 ### From Terratest → Native Tests (1.6+)

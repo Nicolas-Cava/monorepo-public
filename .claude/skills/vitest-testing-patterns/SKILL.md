@@ -26,7 +26,7 @@ This skill helps you write effective tests using Vitest following the project's 
 
 | Layer | Tool |
 |-------|------|
-| Unit / integration tests | `vitest` + `@vitest/coverage-v8` |
+| Unit/integration tests | `vitest` + `@vitest/coverage-v8` |
 | E2E tests | `@playwright/test` |
 | Accessibility audits | `@axe-core/playwright` |
 | Bun-runtime packages (exception) | `bun test` + lcov coverage |

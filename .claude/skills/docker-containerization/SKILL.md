@@ -75,7 +75,7 @@ flowchart TD
 
 ## Production Patterns by Language
 
-### Node.js / TypeScript (Multi-Stage)
+### Node.js/TypeScript (Multi-Stage)
 
 ```dockerfile
 # Stage 1: Dependencies

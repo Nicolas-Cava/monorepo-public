@@ -1,4 +1,4 @@
-# Connect / Platforms
+# Connect/Platforms
 
 ## Table of contents
 - Accounts v2 API

@@ -90,7 +90,7 @@ app/
 
 Prefix with `_` to exclude from routing.
 
-## Middleware / Proxy
+## Middleware/Proxy
 
 ### Next.js 14-15: `middleware.ts`
 
