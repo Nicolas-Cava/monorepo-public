@@ -10,7 +10,7 @@ Common pitfalls and correct patterns for Drizzle ORM.
 ## When to use
 
 - Defining database schemas
-- Running migrations (db:push)
+- Running migrations safely
 - Creating insert/select types
 - Working with array columns
 - Reviewing Drizzle ORM code
@@ -53,13 +53,13 @@ export const insertStrategySchema = createInsertSchema(strategies);
 ## Migration safety
 
 ```bash
-# Safe schema sync
-npm run db:push
+# Generate Drizzle migrations
+pnpm --filter @monorepo/web db:generate
 
-# If data-loss warning and you're sure
-npm run db:push --force
+# Apply migrations to local Postgres
+pnpm --filter @monorepo/web db:migrate:local
 
-# NEVER in production without backup
+# Never run destructive schema commands without explicit approval
 ```
 
 ## Type inference pattern
@@ -97,6 +97,24 @@ export const accounts = pgTable("accounts", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
+```
+
+`defaultNow()` handles insert defaults only. Pair `updated_at` with a database-side
+refresh mechanism in the migration when the dialect supports it:
+
+```sql
+CREATE OR REPLACE FUNCTION set_updated_at()
+RETURNS trigger AS $$
+BEGIN
+  NEW.updated_at := now();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER accounts_set_updated_at
+BEFORE UPDATE ON accounts
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
 ```
 
 ## Quick checklist
