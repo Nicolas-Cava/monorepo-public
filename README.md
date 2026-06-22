@@ -1,6 +1,6 @@
 # monorepo-public
 
-A curated set of Claude Code skills published from [Nicolas-Cava/monorepo](https://github.com/Nicolas-Cava/monorepo).
+A curated set of Claude Code skills published from [nicolascava/monorepo](https://github.com/nicolascava/monorepo).
 
 ## Skills (22)
 
@@ -29,7 +29,7 @@ A curated set of Claude Code skills published from [Nicolas-Cava/monorepo](https
 
 ## Usage
 
-Copy any skill directory into your project's `claude-skills/` folder.
+Copy any skill directory into your project's `.claude/skills/` folder.
 
 ## License
 
