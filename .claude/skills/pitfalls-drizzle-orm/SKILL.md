@@ -111,6 +111,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS accounts_set_updated_at ON accounts;
+
 CREATE TRIGGER accounts_set_updated_at
 BEFORE UPDATE ON accounts
 FOR EACH ROW
